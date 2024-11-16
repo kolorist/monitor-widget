@@ -1,0 +1,37 @@
+Diagnostics:
+  ClangTidy:
+    Add: [
+      'performance*', 'bugprone-*',
+
+      'readability-identifier-naming',
+      'readability-misleading-indentation',
+      'readability-inconsistent-declaration-parameter-name',
+      'readability-const-return-type',
+      'readability-braces-around-statements',
+      'readability-duplicate-include',
+      'readability-simplify-boolean-expr',
+      'readability-function-cognitive-complexity',
+
+      'cppcoreguidelines-init-variables',
+      'cppcoreguidelines-narrowing-conversions',
+
+      'llvm-namespace-comment']
+
+    Remove: [
+      'llvm-include-order',
+      'bugprone-easily-swappable-parameters',
+      'readability-function-cognitive-complexity',
+      'readability-simplify-boolean-expr']
+
+    CheckOptions:
+      readability-identifier-naming.FunctionCase: lower_case
+      readability-identifier-naming.VariableCase: camelBack
+      readability-identifier-naming.StructIgnoredRegexp: .*_i
+      readability-identifier-naming.StructSuffix: _t
+      readability-identifier-naming.TypeTemplateParameterPrefix: t_
+      readability-identifier-naming.GlobalVariablePrefix: s_
+      readability-identifier-naming.GlobalConstantPrefix: k_
+      readability-identifier-naming.StaticConstantPrefix: k_
+      readability-identifier-naming.GlobalVariableCase: camelBack
+      readability-identifier-naming.StaticVariableCase: lower_case
+  UnusedIncludes: Strict
